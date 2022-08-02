@@ -13,7 +13,7 @@ class Album extends React.Component {
       searchAlbum: [],
       searchArtistName: '',
       searchAlbumName: '',
-      favoritesMusics:[],
+      favoritesMusics: [],
     };
   }
 

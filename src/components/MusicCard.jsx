@@ -65,6 +65,9 @@ MusicCard.propTypes = {
   trackName: PropTypes.string.isRequired,
   previewUrl: PropTypes.string.isRequired,
   trackId: PropTypes.number.isRequired,
+  found: PropTypes.shape({
+    artistId: PropTypes.number.isRequired,
+  }).isRequired,
   obj: PropTypes.shape({
     artistId: PropTypes.number.isRequired,
   }).isRequired,
