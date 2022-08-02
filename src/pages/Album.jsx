@@ -19,7 +19,6 @@ class Album extends React.Component {
     const { match: { params: { id } } } = this.props;
     this.setState({ searchAlbum: [] }, async () => {
       const result = await getMusics(id);
-      console.log(result);
       this.setState({
         searchAlbum: result,
         searchArtistName: result[0].artistName,
@@ -40,6 +39,8 @@ class Album extends React.Component {
             key={ index }
             trackName={ music.trackName }
             previewUrl={ music.previewUrl }
+            trackId={ music.trackId }
+            obj={ music }
           />
         ))}
       </div>
