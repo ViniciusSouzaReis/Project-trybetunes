@@ -13,6 +13,13 @@ class MusicCard extends React.Component {
     };
   }
 
+  componentDidMount() {
+    const { found, trackId } = this.props;
+    const received = found;
+    const isFavorite = received.some((music) => music.trackId === Number(trackId));
+    this.setState({ isChecked: isFavorite });
+  }
+
   handleChange = () => {
     const { obj } = this.props;
     this.setState({
