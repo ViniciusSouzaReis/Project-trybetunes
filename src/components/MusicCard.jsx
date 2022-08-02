@@ -20,10 +20,12 @@ class MusicCard extends React.Component {
     this.setState({ isChecked: isFavorite });
   }
 
-  handleChange = () => {
+  handleChange = ({ target }) => {
     const { obj } = this.props;
+    const { name } = target;
+    const value = (target.type === 'checkbox') ? target.checked : target.value;
     this.setState({
-      isChecked: true,
+      [name]: value,
       loading: true,
     }, async () => {
       await addSong(obj);
@@ -49,7 +51,7 @@ class MusicCard extends React.Component {
               <input
                 type="checkbox"
                 id="input-checkbox"
-                name="trunfo"
+                name="isChecked"
                 data-testid={ `checkbox-music-${trackId}` }
                 onChange={ this.handleChange }
                 checked={ isChecked }
